@@ -2,11 +2,8 @@ import { Box, Center, ChakraProvider, Input } from "@chakra-ui/react"
 import ButtonLogin from "./Button/ButtonLogin";
 import { login } from "../services/login";
 
-interface Login {
-  login(): () => {};
-}
 
-export const Card = ({login}: Login) => {
+export const Card = () => {
   return(
     <div>
      <ChakraProvider>
@@ -18,7 +15,7 @@ export const Card = ({login}: Login) => {
           <Input placeholder="email" />
           <Input placeholder="password" />
             <Center>
-              <ButtonLogin onClick={login} />
+              <ButtonLogin onClick={() => login()} />
            
           </Center>
         </Box>
